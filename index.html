@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CreatorPay</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 18px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 18px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">CreatorPay</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Creators</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>CreatorPay</span></h1>
+
+      <p>
+        A platform built to help creators receive payments,
+        grow their work, and connect with opportunities.
+      </p>
+
+      <a href="#" class="btn">Get Started</a>
+    </div>
+  </section>
+
+</body>
+</html>
