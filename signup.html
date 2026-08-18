@@ -60,7 +60,6 @@
 
     .signup-card h1 {
       text-align: center;
-      color: #111827;
       margin-bottom: 10px;
       font-size: 28px;
     }
@@ -115,6 +114,21 @@
       background: #1d4ed8;
     }
 
+    .message {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .success {
+      color: #16a34a;
+    }
+
+    .error {
+      color: #dc2626;
+    }
+
     .login-text {
       text-align: center;
       margin-top: 22px;
@@ -128,7 +142,6 @@
 
   <header>
     <div class="logo">CreatorPay</div>
-
     <a href="index.html" class="back">← Back Home</a>
   </header>
 
@@ -141,7 +154,7 @@
         Join CreatorPay and get started today.
       </p>
 
-      <form>
+      <form id="signupForm">
 
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -169,6 +182,7 @@
             type="password"
             id="password"
             placeholder="Create a password"
+            minlength="6"
             required
           >
         </div>
@@ -179,12 +193,63 @@
 
       </form>
 
+      <div id="message" class="message"></div>
+
       <p class="login-text">
         Your information will be handled securely.
       </p>
 
     </div>
   </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    const SUPABASE_URL = "https://tptuataspepgvxmjavsi.supabase.co";
+    const SUPABASE_KEY = "SHYIRAMO_PUBLISHABLE_KEY_YAWE";
+
+    const supabaseClient = supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+    const form = document.getElementById("signupForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      message.textContent = "Creating your account...";
+      message.className = "message";
+
+      const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          data: {
+            full_name: name
+          }
+        }
+      });
+
+      if (error) {
+        message.textContent = error.message;
+        message.className = "message error";
+        return;
+      }
+
+      message.textContent =
+        "Account created successfully. Check your email to confirm your account.";
+
+      message.className = "message success";
+
+      form.reset();
+    });
+  </script>
 
 </body>
 </html>
