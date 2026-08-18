@@ -17,6 +17,7 @@
       font-family: Arial, sans-serif;
       background: #f5f7fb;
       color: #111827;
+      min-height: 100vh;
     }
 
     header {
@@ -34,11 +35,32 @@
       color: #2563eb;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
     nav a {
       text-decoration: none;
       color: #374151;
-      margin-left: 20px;
       font-size: 15px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .nav-signup {
+      background: #2563eb;
+      color: #ffffff !important;
+      padding: 10px 18px;
+      border-radius: 7px;
+    }
+
+    .nav-signup:hover {
+      background: #1d4ed8;
     }
 
     .hero {
@@ -47,15 +69,16 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     .hero-content {
-      max-width: 700px;
+      max-width: 720px;
     }
 
     .hero h1 {
       font-size: 48px;
+      line-height: 1.15;
       margin-bottom: 20px;
       color: #111827;
     }
@@ -64,7 +87,7 @@
       font-size: 19px;
       line-height: 1.6;
       color: #6b7280;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .btn {
@@ -76,6 +99,7 @@
       border-radius: 8px;
       font-size: 16px;
       font-weight: bold;
+      transition: background 0.2s ease;
     }
 
     .btn:hover {
@@ -87,6 +111,7 @@
       padding: 25px;
       color: #6b7280;
       font-size: 14px;
+      background: #ffffff;
     }
 
     @media (max-width: 600px) {
@@ -94,8 +119,20 @@
         padding: 16px 20px;
       }
 
+      .logo {
+        font-size: 21px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
       nav a {
-        margin-left: 10px;
+        font-size: 13px;
+      }
+
+      .nav-signup {
+        padding: 8px 12px;
       }
 
       .hero h1 {
@@ -112,28 +149,47 @@
 <body>
 
   <header>
-    <div class="logo">CreatorPay</div>
+
+    <div class="logo">
+      CreatorPay
+    </div>
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="signup.html">Sign Up</a>
+
+      <a href="login.html">
+        Login
+      </a>
+
+      <a href="signup.html" class="nav-signup">
+        Sign Up
+      </a>
     </nav>
+
   </header>
 
+
   <section class="hero">
+
     <div class="hero-content">
 
-      <h1>Welcome to CreatorPay</h1>
+      <h1>
+        Welcome to CreatorPay
+      </h1>
 
       <p>
         A simple platform built to help creators manage
         their payments and grow their digital business.
       </p>
 
-      <a href="signup.html" class="btn">Get Started</a>
+      <a href="signup.html" class="btn">
+        Get Started
+      </a>
 
     </div>
+
   </section>
+
 
   <footer>
     © 2026 CreatorPay. All rights reserved.
